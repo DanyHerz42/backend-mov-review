@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
+import config from './config';
 
-mongoose.connect("mongodb+srv://daniel:12345@cluster0.ymxjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+mongoose.connect(config.DB_SERVER, {
     useFindAndModify: true,
     useUnifiedTopology: true,
     useNewUrlParser: true,
