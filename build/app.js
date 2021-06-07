@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -16,8 +18,6 @@ var _helmet = _interopRequireDefault(require("helmet"));
 var _initialSetup = require("./libs/initialSetup");
 
 var _auth = _interopRequireDefault(require("./routes/auth.routes"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 //importacion de rutas
 //configuracion de express
