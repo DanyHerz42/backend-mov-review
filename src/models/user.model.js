@@ -14,8 +14,14 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    name: String,
-    lastname: String,
+    phone: {
+        type: Number,
+        required: true
+    },
+    twoSteps: {
+        type: Boolean,
+        require: true
+    },
     roles: [{
         ref: "Role",
         type: Schema.Types.ObjectId
