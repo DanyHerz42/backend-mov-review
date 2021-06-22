@@ -3,9 +3,17 @@ import morgan from 'morgan';
 import pkg from '../package.json';
 import helmet from 'helmet';
 import cors from 'cors';
-import {createRoles} from './libs/initialSetup'
+import {createRoles} from './libs/initialSetup';
+import rateLimit from 'express-rate-limit';
 //importacion de rutas
 import authRoutes from './routes/auth.routes';
+import moviesRoutes from './routes/movies.routes';
+import usersRoutes from './routes/user.routes'
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100
+})
 
 //configuracion de express
 const app = express();
@@ -31,7 +39,8 @@ app.get("/", (req, res) => {
 
 //rutas
 
-app.use("/sign", authRoutes);
-
+app.use("/sign",limiter, authRoutes);
+app.use("/movies", moviesRoutes);
+app.use("/users", usersRoutes);
 
 export default app;

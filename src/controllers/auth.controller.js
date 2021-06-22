@@ -106,3 +106,22 @@ export const login = async (req,res) => {
     }
 
 }
+
+export const authAdmin = async (req, res) => {
+    const {email, password} = req.body;
+    const userFind = await User.findOne({ email });
+    if (userFind) {
+        let matchPassword = await User.comparePassword(password, userFind.password)
+        if(matchPassword){
+            const token = jwt.sign({ id: userFind._id }, config.SECRET)
+            res.status(200).json({token, user: userFind})
+        }else{
+            res.status(206).json({ message: "Contraseña Incorrecta" });
+        }
+
+    }else{
+        res.status(203).json({ message: "Usuario inexistente" });
+    }
+
+    
+}

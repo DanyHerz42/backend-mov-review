@@ -11,12 +11,6 @@ Object.defineProperty(exports, "Movie", {
     return _movies["default"];
   }
 });
-Object.defineProperty(exports, "Review", {
-  enumerable: true,
-  get: function get() {
-    return _review["default"];
-  }
-});
 Object.defineProperty(exports, "User", {
   enumerable: true,
   get: function get() {
@@ -29,11 +23,17 @@ Object.defineProperty(exports, "Role", {
     return _roles["default"];
   }
 });
+Object.defineProperty(exports, "VerificationCode", {
+  enumerable: true,
+  get: function get() {
+    return _verificaticonCode["default"];
+  }
+});
 
 var _movies = _interopRequireDefault(require("./movies.model"));
-
-var _review = _interopRequireDefault(require("./review.model"));
 
 var _user = _interopRequireDefault(require("./user.model"));
 
 var _roles = _interopRequireDefault(require("./roles.model"));
+
+var _verificaticonCode = _interopRequireDefault(require("./verificaticonCode.model"));

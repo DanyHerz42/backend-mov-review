@@ -28,10 +28,20 @@ var userSchema = new _mongoose.Schema({
     type: String,
     required: true
   },
-  name: String,
-  lastname: String,
+  phone: {
+    type: Number,
+    required: true
+  },
+  twoSteps: {
+    type: Boolean,
+    require: true
+  },
   roles: [{
     ref: "Role",
+    type: _mongoose.Schema.Types.ObjectId
+  }],
+  moviesFavs: [{
+    ref: "Movie",
     type: _mongoose.Schema.Types.ObjectId
   }]
 }, {

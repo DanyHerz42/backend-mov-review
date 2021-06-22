@@ -25,6 +25,10 @@ const userSchema = new Schema({
     roles: [{
         ref: "Role",
         type: Schema.Types.ObjectId
+    }],
+    moviesFavs: [{
+        ref: "Movie",
+        type: Schema.Types.ObjectId
     }]
 },{
     timestamps: true,

@@ -4,7 +4,7 @@ export default async function deleteVerificationCode(code) {
     setTimeout(async () => {
       const borrar = await VerificationCode.findOneAndDelete({ code });
       console.log("yaaaaaaa");
-    }, 60000)
+    }, 300000)
 
   } catch (error) {
     console.log(error);
