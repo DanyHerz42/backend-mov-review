@@ -2,7 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import pkg from '../package.json';
 import helmet from 'helmet';
-import cors from 'cors';
+// import cors from 'cors';
 import {createRoles} from './libs/initialSetup';
 import rateLimit from 'express-rate-limit';
 //importacion de rutas
@@ -25,7 +25,7 @@ app.set("port", process.env.PORT || 4000);
 app.use(morgan('dev'));
 app.use(express.json())
 app.use(helmet())
-app.use(cors())
+// app.use(cors())
 
 //ruta inicial de API
 app.get("/", (req, res) => {
