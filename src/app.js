@@ -10,10 +10,10 @@ import authRoutes from './routes/auth.routes';
 import moviesRoutes from './routes/movies.routes';
 import usersRoutes from './routes/user.routes'
 
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 100
-})
+// const limiter = rateLimit({
+//     windowMs: 15 * 60 * 1000,
+//     max: 100
+// })
 
 //configuracion de express
 const app = express();
@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 
 //rutas
 
-app.use("/sign",limiter, authRoutes);
+app.use("/sign", authRoutes);
 app.use("/movies", moviesRoutes);
 app.use("/users", usersRoutes);
 
